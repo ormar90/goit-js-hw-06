@@ -8,10 +8,11 @@ const destroy = document.querySelector('[data-destroy]');
 const input = document.querySelector('[type="number"]')
 
 function createBoxes(amount) {
+  amount = inputValue;
   const createElement = [];
   let sizeValue = 30;
 
-  for (let i = 0; i < amount; i += 1){
+  for (let i = 0; i < inputValue; i += 1){
     createElement.push(document.createElement('div'));
     createElement[i].style.backgroundColor = getRandomHexColor();
   } 
@@ -31,16 +32,10 @@ function destroyBoxes() {
 }
 
 let inputValue;
-input.addEventListener('input', () => {
-  
+input.addEventListener('input', () => {  
   inputValue = input.value;
-  // console.log(inputValue);
-  return inputValue
+  return inputValue;
 });
 
-  create.addEventListener('click', createBoxes(inputValue));
+  create.addEventListener('click', createBoxes);
   destroy.addEventListener('click', destroyBoxes);
-
-
-console.log(inputValue);
-
